@@ -1,0 +1,24 @@
+/**access control rules for mynetwork
+rule Default {
+  description: "Allow all participants access to all resources"
+  participant: "ANY"
+  operation: ALL
+  resource: "org.dotbox.caregiverNetwork.*"
+  action: ALLOW
+}
+/**added to support
+rule NetworkAdminUser {
+  description: "Grant business network administrators full access to user resources"
+  participant:"org.hyperledger.composer.system.NetworkAdmin"
+  operation: "ALL"
+  resource: "**"
+  action: ALLOW
+}
+rule NetworkAdminSystem {
+description: "Grant business network administrators full access to user resources"
+  participant:"org.hyperledger.composer.system.NetworkAdmin"
+  operation: "ALL"
+  resource: "**"
+  action: ALLOW
+}
+/**end of support

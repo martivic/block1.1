@@ -1,0 +1,40 @@
+namespace composer.events
+
+abstract event BasicEvent {
+}
+
+//notify seller, financeCo that order is placed
+event requested extends BasicEvent {
+	o String orderNumber
+	}
+//notify seller, supplier that a fullfillment request is placed 
+event ordered extends BasicEvent {
+  o String orderNumber
+}
+
+//notify seller, buyer, shipper that shipper has been contacted
+event ship extends BasicEvent {
+  o String orderNumber
+}
+
+//notify seller, supplier, buyer that order is delivered
+event delivered extends BasicEvent {
+	o String orderNumber
+}	
+//notify seller, financeCo order is in dispute
+event dispute extends BasicEvent {
+	o String orderNumber
+}
+
+//notify seller, buyer that dispute has been resolved
+event resolved extends BasicEvent {
+	o String orderNumber
+}
+//notify financeCo, buyer that a request for payment issued
+event requestPayment extends BasicEvent {
+	o String orderNumber
+}
+//notify seller, buyer that order has been paid
+event Paid extends BasicEvent {
+	o String orderNumber
+}
